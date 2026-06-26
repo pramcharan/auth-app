@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1>Welcome to the Home!</h1>
+        </header>
+        <section>
+            <p>This is an basic Register and Login system. I hope you enjoy using it!</p>
+
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </section>
+    </main>
+
+    <script>
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "/login.html";
+        }
+        function logout() {
+            localStorage.setItem("isLoggedIn", "false");
+            localStorage.removeItem("token");
+            window.location.href = "/login.html";
+        }
+    </script>
+</body>
+
+</html>
